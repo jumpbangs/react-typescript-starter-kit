@@ -1,0 +1,23 @@
+# Build Directory
+dist
+
+# Minified files
+**/*{.,-}min.js
+
+# NPM files
+package.json
+
+src/assets/
+node_modules/
+public/
+
+# files
+.eslintrc
+.env
+.editorconfig
+.prettierrc
+README.md
+yarn.lock
+.github/
+.vscode/
+.husky/
