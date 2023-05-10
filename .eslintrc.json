@@ -8,15 +8,28 @@
     "browser": true,
     "es2021": true
   },
-  "extends": ["plugin:react/recommended", "standard-with-typescript", "prettier"],
   "overrides": [],
   "parserOptions": {
     "ecmaVersion": "latest",
     "sourceType": "module",
     "project": ["./tsconfig.json"]
   },
-  "plugins": ["react"],
+  "plugins": ["react", "simple-import-sort", "unused-imports", "react-hooks"],
+  "extends": ["plugin:react/recommended", "standard-with-typescript", "prettier"],
   "rules": {
+    "no-alert": "error",
+    "no-console": "error",
+    "require-await": "error",
+    "no-unreachable": "error",
+    "no-unused-vars": "error",
+    "no-magic-numbers": "warn",
+    "no-trailing-spaces": "error",
+    "eol-last": ["error", "always"],
+    "no-duplicate-imports": ["error", { "includeExports": true }],
+    "no-restricted-syntax": ["error", "FunctionExpression", "FunctionDeclaration"],
+    "quotes": ["error", "single", { "avoidEscape": true, "allowTemplateLiterals": false }],
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn",
     "react/react-in-jsx-scope": "off",
     "@typescript-eslint/no-unused-vars": "warn",
     "@typescript-eslint/no-empty-interface": "off",
@@ -25,6 +38,29 @@
     "@typescript-eslint/promise-function-async": "off",
     "@typescript-eslint/strict-boolean-expressions": "off",
     "@typescript-eslint/explicit-function-return-type": "off",
-    "quotes": ["error", "single", { "avoidEscape": true, "allowTemplateLiterals": false }]
+    "unused-imports/no-unused-imports": "error",
+    "unused-imports/no-unused-vars": [
+      "warn",
+      { "vars": "all", "varsIgnorePattern": "^_", "args": "after-used", "argsIgnorePattern": "^_" }
+    ],
+    "simple-import-sort/imports": [
+      "error",
+      {
+        "groups": [
+          // Packages `react` related packages come first.
+          ["^react", "^@?\\w"],
+          // Internal packages.
+          ["^(@|components)(/.*|$)"],
+          // Side effect imports.
+          ["^\\u0000"],
+          // Parent imports. Put `..` last.
+          ["^\\.\\.(?!/?$)", "^\\.\\./?$"],
+          // Other relative imports. Put same-folder imports and `.` last.
+          ["^\\./(?=.*/)(?!/?$)", "^\\.(?!/?$)", "^\\./?$"],
+          // Style imports.
+          ["^.+\\.?(css)$"]
+        ]
+      }
+    ]
   }
 }
