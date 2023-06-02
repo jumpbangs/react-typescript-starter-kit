@@ -8,5 +8,7 @@
   "trailingComma": "es5",
   "arrowParens": "always",
   "bracketSameLine": false,
+  "requirePragma": true,
+  "insertPragma": true,
   "embeddedLanguageFormatting": "auto"
 }
