@@ -1,12 +1,13 @@
 import React from 'react';
-import { HOME_TITLE } from 'src/common/constants';
+import { Link } from 'react-router-dom';
 
 const Home = () => {
   return (
     <div>
-      <h1>{HOME_TITLE}</h1>
-      <button>lol</button>
-      <p>This is a react-typescript starter kit.</p>
+      <p>
+        This is a react-typescript starter kit.
+        To test routing click <Link to="/about">here</Link> to navigate to the about page
+      </p>
     </div>
   );
 };

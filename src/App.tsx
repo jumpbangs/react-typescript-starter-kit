@@ -1,11 +1,16 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
-import Home from './pages/Home';
+import { HOME_TITLE } from 'src/common/constants';
+import AppRoutes from 'src/routes/appRoutes';
 
 const App = () => {
   return (
     <div>
-      <Home />
+      <Link to="/">
+        <h1>{HOME_TITLE}</h1>
+      </Link>
+      <AppRoutes />
     </div>
   );
 };

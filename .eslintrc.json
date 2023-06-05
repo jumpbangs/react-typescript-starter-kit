@@ -51,6 +51,8 @@
           ["^react", "^@?\\w"],
           // Internal packages.
           ["^(@|components)(/.*|$)"],
+          // Absolute imports and Relative imports.
+          ["^(src|utils|services|hooks|hoc|types|contexts|dictionary|components)(/.*|$)", "^\\."],
           // Side effect imports.
           ["^\\u0000"],
           // Parent imports. Put `..` last.
