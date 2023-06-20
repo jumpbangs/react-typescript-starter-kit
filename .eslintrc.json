@@ -18,7 +18,7 @@
   "extends": ["plugin:react/recommended", "standard-with-typescript", "prettier"],
   "rules": {
     "no-alert": "error",
-    "no-console": "error",
+    "no-console": "warn",
     "require-await": "error",
     "no-unreachable": "error",
     "no-unused-vars": "error",
