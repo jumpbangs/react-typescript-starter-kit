@@ -1,4 +1,5 @@
 import ReactDOM from 'react-dom/client';
+import { ErrorBoundary } from 'react-error-boundary';
 import { HelmetProvider } from 'react-helmet-async';
 import { BrowserRouter } from 'react-router-dom';
 
@@ -11,8 +12,10 @@ const root = ReactDOM.createRoot(MOUNT_ROOT);
 
 root.render(
   <BrowserRouter>
-    <HelmetProvider>
-      <App />
-    </HelmetProvider>
+    <ErrorBoundary fallback={<div>Something went wrong</div>}>
+      <HelmetProvider>
+        <App />
+      </HelmetProvider>
+    </ErrorBoundary>
   </BrowserRouter>
 );

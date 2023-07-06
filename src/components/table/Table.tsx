@@ -1,7 +1,7 @@
 import React from 'react';
 
-import { ZERO } from 'src/common/constants';
-import { capitalize } from 'src/utils/strings';
+import { LAST_ELEMENT_INDEX, ZERO } from 'src/common/constants';
+import { capitalize, convertHTMLToCharacter } from 'src/utils/strings';
 
 interface TableProps {
   tableName?: string;
@@ -11,13 +11,7 @@ interface TableProps {
 
 const Table = ({ tableName, tableDetail, data }: TableProps) => {
   const dataKeys = Object.keys(data);
-  const dataHeaders = Object.keys(data[dataKeys[ZERO]]);
-
-  const tableData = Object.values(data).map((value: any) => {
-    return dataHeaders.map((key) => {
-      return value[key];
-    });
-  });
+  const dataHeaders = Object.keys(data[dataKeys[ZERO]]).slice(ZERO, LAST_ELEMENT_INDEX);
 
   return (
     <table>
@@ -32,11 +26,14 @@ const Table = ({ tableName, tableDetail, data }: TableProps) => {
       </thead>
       <tbody>
         <>
-          <tr>
-            {tableData.map((value, index) => {
-              return <td key={index}>{value}</td>;
-            })}
-          </tr>
+          {Object.keys(data).map((currency) => (
+            <tr key={currency}>
+              <td>{data[currency].code}</td>
+              <td>{convertHTMLToCharacter(data[currency].symbol)}</td>
+              <td>{data[currency].rate}</td>
+              <td>{data[currency].description}</td>
+            </tr>
+          ))}
         </>
       </tbody>
       <caption>
