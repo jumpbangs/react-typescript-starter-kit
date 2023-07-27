@@ -11,9 +11,9 @@ const Home = () => {
   const fetchingCoinsData = async () => {
     const data: any = await fetchCoinsData();
     const tableData = {
-      tableName: data.chartName,
       tableData: data.bpi,
       tableDetail: data.time.updated,
+      tableName: data.chartName,
     };
     setCoinsData(tableData);
   };

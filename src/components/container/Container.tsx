@@ -5,7 +5,7 @@ interface ContainerProps {
   className?: string;
 }
 
-const container = ({ className, children }: ContainerProps) => {
+const container = ({ children, className }: ContainerProps) => {
   return <section className={className}>{children}</section>;
 };
 

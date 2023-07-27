@@ -9,7 +9,7 @@ interface TableProps {
   data?: any;
 }
 
-const Table = ({ tableName, tableDetail, data }: TableProps) => {
+const Table = ({ data, tableDetail, tableName }: TableProps) => {
   const dataKeys = Object.keys(data);
   const dataHeaders = Object.keys(data[dataKeys[ZERO]]).slice(ZERO, LAST_ELEMENT_INDEX);
 

@@ -14,7 +14,7 @@
     "sourceType": "module",
     "project": ["./tsconfig.json"]
   },
-  "plugins": ["react", "simple-import-sort", "unused-imports", "react-hooks"],
+  "plugins": ["react", "unused-imports", "react-hooks", "perfectionist"],
   "extends": ["plugin:react/recommended", "standard-with-typescript", "prettier"],
   "rules": {
     "no-alert": "error",
@@ -43,25 +43,11 @@
       "warn",
       { "vars": "all", "varsIgnorePattern": "^_", "args": "after-used", "argsIgnorePattern": "^_" }
     ],
-    "simple-import-sort/imports": [
+    "perfectionist/sort-objects": [
       "error",
       {
-        "groups": [
-          // Packages `react` related packages come first.
-          ["^react", "^@?\\w"],
-          // Internal packages.
-          ["^(@|components)(/.*|$)"],
-          // Absolute imports and Relative imports.
-          ["^(src|utils|services|hooks|hoc|types|contexts|dictionary|components)(/.*|$)", "^\\."],
-          // Side effect imports.
-          ["^\\u0000"],
-          // Parent imports. Put `..` last.
-          ["^\\.\\.(?!/?$)", "^\\.\\./?$"],
-          // Other relative imports. Put same-folder imports and `.` last.
-          ["^\\./(?=.*/)(?!/?$)", "^\\.(?!/?$)", "^\\./?$"],
-          // Style imports.
-          ["^.+\\.?(css)$"]
-        ]
+        "type": "natural",
+        "order": "asc"
       }
     ]
   }
