@@ -47,6 +47,7 @@
       "eslint .",
       "eslint . --fix",
       "pretty-quick",
+      "yarn build .",
       "git add ."
     ],
     "*.{js,tsx,jsx,css,md}": "pretty-quick"
