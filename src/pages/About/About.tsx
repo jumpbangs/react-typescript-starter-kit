@@ -1,6 +1,4 @@
-import React from 'react';
-
-import { ROUTE_NAMES } from 'src/common/constants';
+import { ROUTE_NAMES } from 'common/constants';
 
 const About = () => {
   return (

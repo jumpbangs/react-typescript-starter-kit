@@ -1,9 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import { ZERO } from 'src/common/constants';
-import { Container, Table } from 'src/components';
-import { fetchCoinsData } from 'src/services/coinDeskService';
+import { ZERO } from 'common/constants';
+import { Container, Table } from 'components';
+import { fetchCoinsData } from 'services/coinDeskService';
 
 const Home = () => {
   const [coinsData, setCoinsData] = React.useState<any>([]);

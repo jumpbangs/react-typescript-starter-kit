@@ -1,7 +1,7 @@
 import { toast } from 'react-toastify';
 import ky from 'ky';
 
-import { COIN_DESK_API } from 'src/services/urls';
+import { COIN_DESK_API } from 'services/urls';
 
 const apiOptions = {
   prefixUrl: COIN_DESK_API,

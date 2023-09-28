@@ -1,8 +1,7 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
 
-import { HOME_TITLE } from 'src/common/constants';
-import AppRoutes from 'src/routes/appRoutes';
+import { HOME_TITLE } from 'common/constants';
+import AppRoutes from 'routes/appRoutes';
 
 const App = () => {
   return (

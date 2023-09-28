@@ -1,7 +1,5 @@
-import React from 'react';
-
-import { LAST_ELEMENT_INDEX, ZERO } from 'src/common/constants';
-import { capitalize, convertHTMLToCharacter } from 'src/utils/strings';
+import { LAST_ELEMENT_INDEX, ZERO } from 'common/constants';
+import { capitalize, convertHTMLToCharacter } from 'utils/strings';
 
 interface TableProps {
   tableName?: string;
