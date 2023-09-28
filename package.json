@@ -20,7 +20,8 @@
     "build": "react-scripts build",
     "lint": "eslint --fix --ext .ts,.tsx ./src",
     "format": "pretty-quick",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "rmdir": "node -e \"var fs = require('fs'); try{process.argv.slice(1).map((fpath) => fs.rmdirSync(fpath, { recursive: true }))}catch(err){console.log(`Dist not found`)}; process.exit(0);\""
   },
   "devDependencies": {
     "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
@@ -48,6 +49,7 @@
       "eslint . --fix",
       "pretty-quick",
       "yarn build .",
+      "yarn rmdir build",
       "git add ."
     ],
     "*.{js,tsx,jsx,css,md}": "pretty-quick"
