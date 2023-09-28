@@ -1,3 +1,5 @@
+import React from 'react';
+
 import { ROUTE_NAMES } from 'common/constants';
 
 const About = () => {

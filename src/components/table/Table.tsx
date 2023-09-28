@@ -1,3 +1,5 @@
+import React from 'react';
+
 import { LAST_ELEMENT_INDEX, ZERO } from 'common/constants';
 import { capitalize, convertHTMLToCharacter } from 'utils/strings';
 
