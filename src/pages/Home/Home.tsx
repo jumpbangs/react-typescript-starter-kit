@@ -1,45 +1,22 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import { ZERO } from 'common/constants';
-import { Container, Table } from 'components';
-import { fetchCoinsData } from 'services/coinDeskService';
+import { HOME_TITLE } from 'common/constants';
+import { Container } from 'components';
 
 const Home = () => {
-  const [coinsData, setCoinsData] = React.useState<any>([]);
-
-  const fetchingCoinsData = async () => {
-    const data: any = await fetchCoinsData();
-    const tableData = {
-      tableData: data.bpi,
-      tableDetail: data.time.updated,
-      tableName: data.chartName,
-    };
-    setCoinsData(tableData);
-  };
-
-  React.useEffect(() => {
-    fetchingCoinsData();
-  }, []);
-
   return (
     <div>
       <Container>
+        <Link to="/">
+          <h1>{HOME_TITLE}</h1>
+        </Link>
         <p>
           This is a react-typescript starter kit. To test routing click{' '}
-          <Link to="/about">here</Link> to navigate to the about page
+          <Link to="/about">here</Link> to navigate to the about page, or click here to navigate to
+          the <Link to="/coindesk">coindesk</Link> page.
         </p>
       </Container>
-
-      {coinsData.length !== ZERO && (
-        <Container>
-          <Table
-            data={coinsData.tableData}
-            tableDetail={coinsData.tableDetail}
-            tableName={coinsData.tableName}
-          />
-        </Container>
-      )}
     </div>
   );
 };

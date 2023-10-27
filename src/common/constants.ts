@@ -5,4 +5,5 @@ export const HOME_TITLE = 'React-TypeScript-starter-kit';
 export const ROUTE_NAMES = {
   ABOUT: { pathName: '/about', title: 'About' },
   HOME: { pathName: '/', title: 'Home' },
+  COINDESK: { pathName: '/coindesk', title: 'CoinDesk' },
 };

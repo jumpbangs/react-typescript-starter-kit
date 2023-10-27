@@ -14,6 +14,6 @@ export const fetchCoinsData = async () => {
     const response = await apiClient.get('v1/bpi/currentprice.json').json();
     return response;
   } catch (err) {
-    toast.error('Something went wrong');
+    toast.error('Error while fetching coins data');
   }
 };
